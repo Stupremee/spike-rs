@@ -42,6 +42,7 @@ macro_rules! register_plugins {
 
             unsafe extern "C" fn dealloc(this: *mut ::std::os::raw::c_void) {
                 let _drop = ::std::boxed::Box::<$plugin>::from_raw(this.cast());
+                ::std::mem::drop(_drop);
             }
 
             unsafe extern "C" fn store(
