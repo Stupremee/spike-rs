@@ -58,7 +58,7 @@ pub type StoreFunction = unsafe extern "C" fn(
 /// # Parameters
 ///
 /// - `this`: The instance of a plugin which should be deallocated.
-pub type DeallocFunction = unsafe extern "C" fn(this: *const c_void);
+pub type DeallocFunction = unsafe extern "C" fn(this: *mut c_void);
 
 /// The raw FFI-compatible representation of a MMIO plugin.
 #[repr(C)]
